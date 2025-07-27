@@ -38,10 +38,6 @@ src
 │ └── resources
 │ ├── application.properties
 
-yaml
-Copy
-Edit
-
 ---
 
 ## 🚀 Getting Started
@@ -101,8 +97,7 @@ Muhammad Sufiyan
 📬 GitHub Profile
 
 yaml
-Copy
-Edit
+
 
 ---
 
