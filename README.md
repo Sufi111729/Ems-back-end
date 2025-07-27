@@ -47,12 +47,11 @@ src
 ```bash
 git clone https://github.com/Sufi111729/Ems-back-end.git
 cd Ems-back-end
-2. Configure Database
+
+###2. Configure Database
+
 Edit the src/main/resources/application.properties file to connect to your MySQL database:
 
-properties
-Copy
-Edit
 spring.datasource.url=jdbc:mysql://localhost:3306/ems_db
 spring.datasource.username=root
 spring.datasource.password=your_password
