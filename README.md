@@ -1,97 +1,118 @@
-# 🎓 EMS Back-End – School Management System API
+# Employee Management System - Backend
 
-This is the backend system for a role-based **Educational Management System (EMS)** built using **Spring Boot**. It manages user registration, authentication, role-based access (Admin, Teacher, Student), and supports account verification, password management, and user information retrieval.
-
----
-
-## 📌 Features
-
-- ✅ User registration for Admin, Teacher, and Student roles
-- 🔐 JWT-based login/logout & token refresh
-- 📧 Email verification with OTP (verify/resend)
-- 🔄 Password reset and change flows
-- 🧾 Role-based access to authenticated routes
-- 👨‍🏫 Teacher & Student DTOs for custom data handling
-- 🛠️ Spring Boot + Spring Security + JPA architecture
+This is a basic-level Employee Management System (EMS) built using **Spring Boot**. It provides a simple REST API for performing **CRUD operations** on employee records. This project serves as a foundational backend for learning and practicing Java Spring Boot development.
 
 ---
 
-## 🛠️ Tech Stack
+## 🔧 Technologies Used
 
-- **Java 17**
-- **Spring Boot 3**
-- **Spring Security (JWT)**
-- **Spring Data JPA (Hibernate)**
-- **MySQL**
-- **Lombok**
-- **Validation API**
-- **ModelMapper**
+- Java 17+
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- MySQL (or any compatible RDBMS)
+- Maven
 
 ---
 
-## 📁 Folder Structure
+## 📁 Features
 
-src/
-├── auth/ # Login, logout, token, email verification
-├── config/ # Security configuration
-├── controller/ # REST controllers
-├── dto/ # Request and response models
-├── entity/ # JPA entities (User, Role, etc.)
-├── repository/ # JPA Repositories
-├── service/ # Business logic and auth services
-├── utils/ # JWT utility, OTP handling, etc.
-└── EmsBackEndApplication.java
-
+- Create a new employee
+- Retrieve all employees
+- Retrieve an employee by ID
+- Update employee details
+- Delete an employee by ID
 
 ---
 
-## 🧪 API Endpoints
+## 📦 Project Structure
 
-### 🔐 Auth & JWT
+src
+├── main
+│ ├── java
+│ │ └── com.sufi.ems
+│ │ ├── controller # REST Controller for Employee APIs
+│ │ ├── entity # Employee Entity
+│ │ ├── repository # JPA Repository Interface
+│ │ └── service # Service Layer (optional abstraction)
+│ └── resources
+│ ├── application.properties
 
-| Method | Endpoint              | Description                        |
-|--------|-----------------------|------------------------------------|
-| POST   | `/login`              | Login and receive JWT              |
-| POST   | `/refresh-token`      | Get a new access token             |
-| POST   | `/logout`             | Logout and invalidate refresh token |
-
-### 👤 Registration
-
-| Method | Endpoint                  | Description                     |
-|--------|---------------------------|---------------------------------|
-| POST   | `/register/admin`         | Register an admin               |
-| POST   | `/register/teacher`       | Register a teacher              |
-| POST   | `/register/student`       | Register a student              |
-
-### 🔒 Password & Email Verification
-
-| Method | Endpoint                  | Description                     |
-|--------|---------------------------|---------------------------------|
-| POST   | `/forgot-password`        | Request password reset OTP      |
-| POST   | `/reset-password`         | Reset password with OTP         |
-| POST   | `/change-password`        | Change password (logged in)     |
-| POST   | `/verify-email`           | Verify OTP for email            |
-| POST   | `/resend-verification`    | Resend OTP                      |
-
-### 👤 Profile
-
-| Method | Endpoint   | Description             |
-|--------|------------|-------------------------|
-| GET    | `/me`      | Get logged-in user info |
+yaml
+Copy
+Edit
 
 ---
 
-## 📦 Sample DTOs
+## 🚀 Getting Started
 
-### Student Registration
+### 1. Clone the Repository
 
-```json
+```bash
+git clone https://github.com/Sufi111729/Ems-back-end.git
+cd Ems-back-end
+2. Configure Database
+Edit the src/main/resources/application.properties file to connect to your MySQL database:
+
+properties
+Copy
+Edit
+spring.datasource.url=jdbc:mysql://localhost:3306/ems_db
+spring.datasource.username=root
+spring.datasource.password=your_password
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+3. Build and Run
+You can run the application using your IDE or via terminal:
+
+bash
+Copy
+Edit
+./mvnw spring-boot:run
+The application will start on:
+📍 http://localhost:8080
+
+🧪 API Endpoints
+Method	Endpoint	Description
+GET	/employees	Get all employees
+GET	/employees/{id}	Get employee by ID
+POST	/employees	Create a new employee
+PUT	/employees/{id}	Update employee by ID
+DELETE	/employees/{id}	Delete employee by ID
+
+📌 Example JSON Payload
+json
+Copy
+Edit
 {
-  "username": "student1",
-  "email": "student1@example.com",
-  "password": "password",
-  "studentId": "ST123",
-  "parentName": "John Doe",
-  "parentContact": "9876543210",
-  "classroomId": "CLS101"
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "designation": "Software Engineer"
 }
+📃 License
+This project is open source and available under the MIT License.
+
+🙌 Acknowledgements
+This project is developed as part of personal learning and is intended to demonstrate basic CRUD functionality using Spring Boot.
+
+🔗 Author
+Muhammad Sufiyan
+📬 GitHub Profile
+
+yaml
+Copy
+Edit
+
+---
+
+Let me know when you’re ready with the **next project** for README or `\cventry` formatting for your resume!
+
+
+
+
+
+
+
+
+Ask ChatGPT
